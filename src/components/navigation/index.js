@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./index.module.scss";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
+import Cart from "../cart";
 
 const Navigation = () => {
   return (
@@ -19,6 +20,9 @@ const Navigation = () => {
               <Link to="/login" className={classes.navLink}>
                 SIGN IN
               </Link>
+            </li>
+            <li>
+              <Cart />
             </li>
           </ul>
         </nav>
