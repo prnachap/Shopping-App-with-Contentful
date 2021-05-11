@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../button";
 import classes from "./index.module.scss";
 import Input from "../input";
+import GoogleAuth from "../../utils/auth/GoogleAuth";
 
 const SignUp = () => {
   return (
@@ -14,7 +15,7 @@ const SignUp = () => {
       </form>
       <div className={classes.btnContainer}>
         <Button>Sign In</Button>
-        <Button bg="google">Sign In With Google</Button>
+        <GoogleAuth />
       </div>
       <p className={classes.divide}>or</p>
       <div>
