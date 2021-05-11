@@ -1,0 +1,42 @@
+.header {
+  min-height: 5rem;
+  margin-top: 2rem;
+
+  .container {
+    max-width: 144rem;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .logo {
+    height: 4rem;
+    width: 4rem;
+    & path {
+      fill: #101a1a;
+    }
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+
+    .navItems {
+      display: flex;
+      list-style: none;
+
+      & > *:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+
+    .navLink {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--color-primary);
+    }
+  }
+}
