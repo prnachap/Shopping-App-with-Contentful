@@ -1,0 +1,58 @@
+.card {
+  position: relative;
+  &:hover .buttonContainer {
+    opacity: 1;
+  }
+}
+
+.imageContainer {
+  min-height: 30rem;
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &:hover .buttonContainer {
+    opacity: 1;
+  }
+}
+
+.cardImage {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+
+  @media (max-width: 18.75em) {
+    object-fit: contain;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonContainer {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  width: 80%;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
