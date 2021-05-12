@@ -1,14 +1,11 @@
 import React from "react";
-import classes from "./index.module.scss";
+import "./index.scss";
 
-const index = ({ children, bg, handleClick, width }) => {
+const index = ({ children, bg, handleClick, width, className }) => {
   return (
     <button
-      className={classes.button}
+      className={`button ${className}`}
       style={{
-        background: `${
-          bg === "google" ? "#4285F4" : bg === "facebook" && "#156FE5"
-        }`,
         width: `${width === "fullwidth" && "100%"}`,
       }}
       onClick={handleClick}

@@ -8,4 +8,16 @@
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &.google {
+    background: #4285f4;
+  }
+  &.facebook {
+    background: #156fe5;
+  }
+
+  &:hover {
+    filter: brightness(120%);
+  }
 }

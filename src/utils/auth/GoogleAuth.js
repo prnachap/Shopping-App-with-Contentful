@@ -41,11 +41,11 @@ const GoogleAuth = () => {
   return (
     <div>
       {auth ? (
-        <Button bg="google" handleClick={handleSignOut}>
+        <Button className="google" handleClick={handleSignOut}>
           Sign Out With Google
         </Button>
       ) : (
-        <Button bg="google" handleClick={handleSignIn}>
+        <Button className="google" handleClick={handleSignIn}>
           Sign In With Google
         </Button>
       )}

@@ -19,7 +19,7 @@ const SignUp = () => {
       </div>
       <p className={classes.divide}>or</p>
       <div>
-        <Button bg="facebook">Sign In With Facebook</Button>
+        <Button className="facebook">Sign In With Facebook</Button>
       </div>
     </div>
   );
