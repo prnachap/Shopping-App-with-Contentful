@@ -10,15 +10,18 @@ export const addItemToCart = (cartItems, itemToAdd) => {
   }
 };
 
-export const deleteItemFromCart = (cartItems, id) => {
-  const itemFound = cartItems.filter((item) => item.id === id);
-  if (itemFound) {
-    if (itemFound[0].qty > 0) {
-      return cartItems.map((item) => {
-        return item.id === id ? { ...item, qty: item.qty - 1 } : item;
-      });
-    } else {
-      return cartItems.filter((item) => item.id !== id);
-    }
+export const removeItemFromCart = (cartItems, cartItemToRemove) => {
+  const exsistingItem = cartItems.find(
+    (cartItem) => cartItem.id === cartItemToRemove.id
+  );
+
+  if (exsistingItem.qty === 1) {
+    return cartItems.filter((cartItem) => cartItem.id !== cartItemToRemove.id);
+  } else {
+    return cartItems.map((cartItem) => {
+      return cartItem.id === cartItemToRemove.id
+        ? { ...cartItem, qty: cartItem.qty - 1 }
+        : cartItem;
+    });
   }
 };

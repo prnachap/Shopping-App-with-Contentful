@@ -13,6 +13,7 @@ const Shop = () => {
         items.map(({ sys, image, price, title }) => (
           <Item
             key={sys.id}
+            id={sys.id}
             title={title}
             alt={image.description}
             imageUrl={image.url}
