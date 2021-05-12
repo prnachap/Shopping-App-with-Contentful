@@ -1,12 +1,12 @@
 .container {
   max-width: 144rem;
-
   width: 90%;
   margin: 0 auto;
   margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(4, 30rem);
   grid-column-gap: 2rem;
+  grid-row-gap: 4rem;
   justify-content: center;
 
   @media (max-width: 64em) {

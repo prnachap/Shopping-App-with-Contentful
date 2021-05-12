@@ -15,11 +15,11 @@ const Item = ({ imageUrl, alt, title, price }) => {
   return (
     <div className={classes.card}>
       <div className={classes.imageContainer}>
-        <img src={src} alt="bean cap" className={classes.cardImage} />
+        <img src={imageUrl} alt={alt} className={classes.cardImage} />
       </div>
       <div className={classes.content}>
-        <h3>Back Cap</h3>
-        <h3>24</h3>
+        <h3>{title}</h3>
+        <h3>&#8377; {price}</h3>
       </div>
       <div className={classes.buttonContainer}>
         <Button width="fullwidth" className="light">

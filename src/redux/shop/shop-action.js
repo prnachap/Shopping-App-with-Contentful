@@ -1,18 +1,21 @@
 import { shopActionType } from "./shop-type";
 
 const query = `{
-    shoppingCollection{
-      items{
+  shoppingCollection{
+    items{
+      sys{
+        id
+      }
+      title,
+      price,
+      image{
         title,
-        price,
-        image{
-          title,
-          description,
-          url
-        }
+        description,
+        url
       }
     }
-  }`;
+  }
+}`;
 
 export const setLoading = () => {
   return {
