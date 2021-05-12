@@ -6,7 +6,7 @@ const FacebookAuth = () => {
   useEffect(() => {
     window.fbAsyncInit = function () {
       window.FB.init({
-        appId: "456098172157456",
+        appId: "test",
         cookie: true,
         xfbml: true,
         version: "v10.0",
