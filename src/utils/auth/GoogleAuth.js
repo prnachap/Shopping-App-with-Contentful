@@ -3,7 +3,7 @@ import { Button } from "../../components";
 
 const GoogleAuth = () => {
   const [auth, setAuth] = useState(null);
-  const [authObject, setAuthObject] = useState(null);
+
   useEffect(() => {
     window.gapi.load("client:auth2", () => {
       window.gapi.client
@@ -12,8 +12,6 @@ const GoogleAuth = () => {
           scope: "email",
         })
         .then(() => {
-          setAuthObject(window.gapi.auth2.getAuthInstance());
-          console.log(authObject.isSignedIn);
           setAuth(window.gapi.auth2.getAuthInstance().isSignedIn.get());
           window.gapi.auth2
             .getAuthInstance()
@@ -24,16 +22,15 @@ const GoogleAuth = () => {
   }, []);
 
   const handleAuthChange = () => {
-    setAuth(authObject.isSignedIn.get());
+    setAuth(window.gapi.auth2.getAuthInstance().isSignedIn.get());
   };
 
   const handleSignIn = () => {
-    authObject.signIn();
-    console.log(authObject);
+    window.gapi.auth2.getAuthInstance().signIn();
   };
 
   const handleSignOut = () => {
-    authObject.signOut();
+    window.gapi.auth2.getAuthInstance().signOut();
   };
 
   return (
