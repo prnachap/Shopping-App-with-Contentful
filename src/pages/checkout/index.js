@@ -3,8 +3,10 @@ import classes from "./index.module.scss";
 import { CheckoutItem, Button } from "../../components";
 import { useSelector } from "react-redux";
 import { totalPrice } from "../../utils/cartCount";
+import useRedirect from "../../hooks/useRedirect";
 
 const Checkout = () => {
+  useRedirect("/login");
   const { items } = useSelector((state) => state.cart);
   return (
     <div className={classes.container}>

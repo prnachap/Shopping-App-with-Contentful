@@ -2,15 +2,16 @@
 import { authActionTypes } from "./auth-types";
 
 const INITIAL_STATE = {
-  loggedIn: false,
+  loggedIn: null,
+  error: null,
 };
 export default (state = INITIAL_STATE, action) => {
-  const { type, payload } = action;
+  const { type } = action;
   switch (type) {
     case authActionTypes.SIGN_IN:
-      return { ...state, loggedIn: payload };
+      return { ...state, loggedIn: true, error: null };
     case authActionTypes.SIGN_OUT:
-      return { ...state, loggedIn: payload };
+      return { ...state, loggedIn: false, error: null };
     default:
       return state;
   }

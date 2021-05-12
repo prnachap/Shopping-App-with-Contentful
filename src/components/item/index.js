@@ -1,12 +1,19 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./index.module.scss";
 import Button from "../button/index";
 import { addToCart } from "../../redux/cart/cart-action";
+import { useHistory } from "react-router-dom";
 
 const Item = ({ id, imageUrl, alt, title, price }) => {
+  const history = useHistory();
   const dispatch = useDispatch();
+  const { loggedIn } = useSelector((state) => state.auth);
+
   const handleItemAddition = () => {
+    if (!loggedIn) {
+      return history.push("/login");
+    }
     dispatch(addToCart({ id, title, imageUrl, alt, price }));
   };
   return (

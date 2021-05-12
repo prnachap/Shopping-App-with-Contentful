@@ -4,9 +4,9 @@ import { SignUp } from "../../components";
 
 const Login = () => {
   return (
-    <section className={classes.login}>
+    <div className={classes.login}>
       <SignUp />
-    </section>
+    </div>
   );
 };
 
