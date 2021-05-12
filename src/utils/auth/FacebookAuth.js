@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { Button } from "../../components";
+import { useEffect } from "react";
+// import { Button } from "../../components";
 
 const FacebookAuth = () => {
-  const [log, setLog] = useState(null);
+  //   const [log, setLog] = useState(null);
   useEffect(() => {
     window.fbAsyncInit = function () {
       window.FB.init({
@@ -36,7 +36,7 @@ const FacebookAuth = () => {
     if (response.status === "connected") {
       var accessToken = response.authResponse.accessToken;
       console.log(accessToken);
-      setLog(true);
+      //   setLog(true);
     }
   };
 
