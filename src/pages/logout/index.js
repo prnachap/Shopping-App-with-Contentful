@@ -8,10 +8,6 @@ const Logout = () => {
   const { loggedIn } = useSelector((state) => state.auth);
   const history = useHistory();
 
-  if (!loggedIn) {
-    return history.push("/");
-  }
-
   return (
     <div className={classes.logout}>
       <h2>See You Again</h2>
