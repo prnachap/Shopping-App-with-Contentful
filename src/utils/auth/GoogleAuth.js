@@ -4,13 +4,11 @@ import { Button } from "../../components";
 const GoogleAuth = () => {
   const [auth, setAuth] = useState(null);
   const [authObject, setAuthObject] = useState(null);
-
   useEffect(() => {
     window.gapi.load("client:auth2", () => {
       window.gapi.client
         .init({
-          clientId:
-            "841254262137-p2ucctfmf99blnuufgo1detkml1ge9f9.apps.googleusercontent.com",
+          clientId: `${process.env.REACT_APP_GOOGLE_TOKEN}`,
           scope: "email",
         })
         .then(() => {
