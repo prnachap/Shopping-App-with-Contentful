@@ -5,10 +5,10 @@ import { Login, Shop, Checkout } from "./pages";
 import useGraph from "./hooks/useGraph";
 
 function App() {
-  const [data, error] = useGraph();
+  // const [data, error] = useGraph();
+
   return (
     <BrowserRouter>
-      {console.log(data, error)}
       <Layout />
       <Switch>
         <Route path="/" exact component={Shop} />

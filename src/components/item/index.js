@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import classes from "./index.module.scss";
 import src from "../../assets/hats/blue-beanie.png";
 import Button from "../button/index";
-import { addToCart } from "../../redux/shop/shop-action";
+import { addToCart } from "../../redux/cart/cart-action";
 
-const Item = ({ imageUrl }) => {
-  const state = useSelector((state) => state.shop);
-  console.log(state);
+const Item = ({ imageUrl, alt, title, price }) => {
+  // const state = useSelector((state) => state.cart);
+
   const dispatch = useDispatch();
   const handleItemAddition = () => {
     dispatch(addToCart({ id: "1", title: "greenCap" }));
@@ -21,7 +21,7 @@ const Item = ({ imageUrl }) => {
         <h3>Back Cap</h3>
         <h3>24</h3>
       </div>
-      <div className={classes.buttonContainer} onClick={handleItemAddition}>
+      <div className={classes.buttonContainer}>
         <Button width="fullwidth" className="light">
           Add to cart
         </Button>

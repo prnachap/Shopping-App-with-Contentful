@@ -4,12 +4,11 @@ import classes from "./index.module.scss";
 import srcImg from "../../assets/hats/brown-brim.png";
 import { FiChevronLeft } from "react-icons/fi";
 import { FiChevronRight } from "react-icons/fi";
-import { deleteItemFromCart } from "../../redux/shop/shop-action";
+import { deleteItemFromCart } from "../../redux/cart/cart-action";
 
 const CheckoutItem = () => {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.shop);
-  console.log(state);
+  const state = useSelector((state) => state.cart);
   return (
     <div className={classes.item}>
       <div className={classes.flexWrapper}>
