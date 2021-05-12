@@ -8,7 +8,9 @@ const Navigation = () => {
   return (
     <header className={classes.header}>
       <div className={classes.container}>
-        <Logo className={classes.logo} />
+        <Link to="/">
+          <Logo className={classes.logo} />
+        </Link>
         <nav className={classes.nav}>
           <ul className={classes.navItems}>
             <li className={classes.navItem}>

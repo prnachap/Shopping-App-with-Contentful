@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "../../components";
+import { useDispatch } from "react-redux";
+import { signIn, signOut } from "../../redux/auth/auth-action";
 
 const GoogleAuth = () => {
   const [auth, setAuth] = useState(null);
-
+  const dispatch = useDispatch();
   useEffect(() => {
     window.gapi.load("client:auth2", () => {
       window.gapi.client
@@ -26,11 +28,11 @@ const GoogleAuth = () => {
   };
 
   const handleSignIn = () => {
-    window.gapi.auth2.getAuthInstance().signIn();
+    dispatch(signIn(window.gapi.auth2.getAuthInstance().signIn()));
   };
 
   const handleSignOut = () => {
-    window.gapi.auth2.getAuthInstance().signOut();
+    dispatch(signOut(window.gapi.auth2.getAuthInstance().signOut()));
   };
 
   return (
