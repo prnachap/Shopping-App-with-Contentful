@@ -22,7 +22,9 @@ const Item = ({ imageUrl }) => {
         <h3>24</h3>
       </div>
       <div className={classes.buttonContainer} onClick={handleItemAddition}>
-        <Button width="fullwidth">Add to cart</Button>
+        <Button width="fullwidth" className="light">
+          Add to cart
+        </Button>
       </div>
     </div>
   );

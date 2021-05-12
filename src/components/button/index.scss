@@ -20,4 +20,10 @@
   &:hover {
     filter: brightness(120%);
   }
+
+  &.light {
+    color: var(--color-primary);
+    background: var(--color-secondary);
+    opacity: 0.8;
+  }
 }

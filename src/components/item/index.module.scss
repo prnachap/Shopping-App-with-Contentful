@@ -55,4 +55,8 @@
   width: 80%;
   opacity: 0;
   transition: all 0.3s ease-in-out;
+
+  @media (max-width: 64em) {
+    opacity: 1;
+  }
 }

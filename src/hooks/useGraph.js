@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const query = `{
-    assetCollection(where : {title_in:["red beanie","wolf cap","brown brim",
-    "palm tree cap","brown cowboy","grey brim","green beanie","blue beanie","blue snapback",]}){
-      items{
+  shoppingCollection{
+    items{
+      title,
+      price,
+      image{
         title,
         description,
         url
       }
     }
-  }`;
+  }
+}`;
 const useGraph = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
