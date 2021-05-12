@@ -5,7 +5,7 @@ import { signIn, signOut } from "../../redux/auth/auth-action";
 
 const GoogleAuth = () => {
   const [auth, setAuth] = useState(null);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   useEffect(() => {
     window.gapi.load("client:auth2", () => {
       window.gapi.client
@@ -28,11 +28,11 @@ const GoogleAuth = () => {
   };
 
   const handleSignIn = () => {
-    dispatch(signIn(window.gapi.auth2.getAuthInstance().signIn()));
+    // dispatch(signIn(window.gapi.auth2.getAuthInstance().signIn()));
   };
 
   const handleSignOut = () => {
-    dispatch(signOut(window.gapi.auth2.getAuthInstance().signOut()));
+    // dispatch(signOut(window.gapi.auth2.getAuthInstance().signOut()));
   };
 
   return (
