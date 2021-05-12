@@ -1,0 +1,20 @@
+.container {
+  max-width: 144rem;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 4rem;
+
+  h2 {
+    margin-bottom: 3rem;
+  }
+
+  h3 {
+    // margin-left: 80%;
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+
+  .buttonWrapper {
+    text-align: right;
+  }
+}

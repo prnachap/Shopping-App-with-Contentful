@@ -1,14 +1,16 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./index.module.scss";
 import src from "../../assets/hats/blue-beanie.png";
 import Button from "../button/index";
 import { addToCart } from "../../redux/shop/shop-action";
 
 const Item = ({ imageUrl }) => {
+  const state = useSelector((state) => state.shop);
+  console.log(state);
   const dispatch = useDispatch();
   const handleItemAddition = () => {
-    dispatch(addToCart());
+    dispatch(addToCart({ id: "1", title: "greenCap" }));
   };
   return (
     <div className={classes.card}>

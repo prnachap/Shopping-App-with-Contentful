@@ -22,7 +22,9 @@ const Navigation = () => {
               </Link>
             </li>
             <li>
-              <Cart />
+              <Link to="/checkout">
+                <Cart />
+              </Link>
             </li>
           </ul>
         </nav>

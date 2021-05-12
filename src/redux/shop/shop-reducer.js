@@ -1,13 +1,20 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { shopActionType } from "./shop-type";
+import { addItemToCart, deleteItemFromCart } from "./shop-utils";
 const INITIAL_STATE = {
-  cart: 0,
+  items: [],
 };
 
 export default (state = INITIAL_STATE, action) => {
-  switch (action.type) {
+  const { type, payload } = action;
+
+  switch (type) {
     case shopActionType.ADD_TO_CART:
-      return { ...state, cart: state.cart + 1 };
+      return { ...state, items: addItemToCart(state.items, payload) };
+
+    case shopActionType.DELETE_FROM_CART:
+      return { ...state, items: deleteItemFromCart(state.items, payload) };
+
     default:
       return state;
   }
