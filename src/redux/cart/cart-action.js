@@ -13,3 +13,7 @@ export const deleteItemFromCart = ({ id, title, imageUrl, alt, price }) => {
     payload: { id, title, imageUrl, alt, price },
   };
 };
+
+export const clearCart = () => {
+  return { type: cartActionType.CLEAR_CART };
+};

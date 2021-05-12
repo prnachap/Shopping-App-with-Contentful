@@ -14,7 +14,8 @@ export default (state = INITIAL_STATE, action) => {
 
     case cartActionType.DELETE_FROM_CART:
       return { ...state, items: removeItemFromCart(state.items, payload) };
-
+    case cartActionType.CLEAR_CART:
+      return { ...state, items: [] };
     default:
       return state;
   }

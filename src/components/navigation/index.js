@@ -1,10 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import classes from "./index.module.scss";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import Cart from "../cart";
 
 const Navigation = () => {
+  const { loggedIn } = useSelector((state) => state.auth);
   return (
     <header className={classes.header}>
       <div className={classes.container}>
@@ -19,9 +21,15 @@ const Navigation = () => {
               </Link>
             </li>
             <li>
-              <Link to="/login" className={classes.navLink}>
-                SIGN IN
-              </Link>
+              {loggedIn ? (
+                <Link to="/logout" className={classes.navLink}>
+                  SIGN OUT
+                </Link>
+              ) : (
+                <Link to="/login" className={classes.navLink}>
+                  SIGN IN
+                </Link>
+              )}
             </li>
             <li>
               <Link to="/checkout">

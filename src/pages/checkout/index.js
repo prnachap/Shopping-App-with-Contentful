@@ -3,11 +3,17 @@ import classes from "./index.module.scss";
 import { CheckoutItem, Button } from "../../components";
 import { useSelector } from "react-redux";
 import { totalPrice } from "../../utils/cartCount";
-import useRedirect from "../../hooks/useRedirect";
+import { useHistory } from "react-router-dom";
 
 const Checkout = () => {
-  useRedirect("/login");
   const { items } = useSelector((state) => state.cart);
+  const { loggedIn } = useSelector((state) => state.auth);
+  const history = useHistory();
+
+  if (!loggedIn) {
+    history.push("/login");
+  }
+
   return (
     <div className={classes.container}>
       <h2>Shopping Cart</h2>
