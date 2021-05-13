@@ -29,9 +29,9 @@ const GoogleAuth = () => {
 
   const handleAuthChange = (isSignedIn) => {
     if (isSignedIn) {
-      dispatch(signIn(isSignedIn));
+      dispatch(signIn("google"));
     } else {
-      dispatch(signOut(isSignedIn));
+      dispatch(signOut("google"));
     }
   };
 

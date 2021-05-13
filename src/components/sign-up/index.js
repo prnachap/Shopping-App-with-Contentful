@@ -3,6 +3,7 @@ import Button from "../button";
 import classes from "./index.module.scss";
 import Input from "../input";
 import GoogleAuth from "../../utils/auth/GoogleAuth";
+import FacebookAuth from "../../utils/auth/FacebookAuth";
 
 const SignUp = () => {
   const [input, setInput] = useState({
@@ -47,7 +48,7 @@ const SignUp = () => {
       </div>
       <p className={classes.divide}>or</p>
       <div>
-        <Button className="facebook">Sign In With Facebook</Button>
+        <FacebookAuth />
       </div>
     </div>
   );
