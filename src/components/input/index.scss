@@ -28,5 +28,10 @@
     font-weight: normal;
     pointer-events: none;
     transition: 300ms ease all;
+
+    &.resize {
+      top: -14px;
+      font-size: 1.2rem;
+    }
   }
 }

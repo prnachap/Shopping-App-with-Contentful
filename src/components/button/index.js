@@ -1,7 +1,14 @@
 import React from "react";
 import "./index.scss";
 
-const index = ({ children, bg, handleClick, width, className }) => {
+const index = ({
+  children,
+  bg,
+  handleClick,
+  width,
+  className,
+  ...otherProps
+}) => {
   return (
     <button
       className={`button ${className}`}
