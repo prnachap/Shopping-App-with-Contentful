@@ -1,8 +1,8 @@
 import "./App.scss";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { Layout } from "./components";
 import { Login, Shop, Checkout, Logout, Error } from "./pages";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getShopData } from "./redux/shop/shop-action";
 
@@ -14,14 +14,22 @@ function App() {
     dispatch(getShopData());
   }, [dispatch]);
 
+  const { loggedIn } = useSelector((state) => state.auth);
+
   return (
     <BrowserRouter>
       <Layout />
       <Switch>
         <Route path="/" exact component={Shop} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/checkout" exact component={Checkout} />
-        <Route path="/logout" exact component={Logout} />
+        <Route path="/login" exact>
+          {loggedIn ? <Redirect to="/" /> : <Login />}
+        </Route>
+        <Route path="/checkout" exact>
+          {!loggedIn ? <Redirect to="/login" /> : <Checkout />}
+        </Route>
+        <Route path="/logout" exact>
+          {!loggedIn ? <Redirect to="/login" /> : <Logout />}
+        </Route>
         <Route path="*" exact component={Error} />
       </Switch>
     </BrowserRouter>

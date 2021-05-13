@@ -36,12 +36,12 @@ const GoogleAuth = () => {
   };
 
   const handleSignIn = () => {
-    signIn(window.gapi.auth2.getAuthInstance().signIn());
+    window.gapi.auth2.getAuthInstance().signIn();
     dispatch(clearCart());
   };
 
   const handleSignOut = () => {
-    signOut(window.gapi.auth2.getAuthInstance().signOut());
+    window.gapi.auth2.getAuthInstance().signOut();
   };
 
   return (
