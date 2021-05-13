@@ -7,6 +7,10 @@ import { totalPrice } from "../../utils/cartCount";
 const Checkout = () => {
   const { items } = useSelector((state) => state.cart);
 
+  const handleClick = () => {
+    alert("thank you for shopping with us :christmas_tree:");
+  };
+
   return (
     <div className={classes.container}>
       <h2>Shopping Cart</h2>
@@ -18,7 +22,7 @@ const Checkout = () => {
 
           <h3>Total Price : &#8377; {totalPrice(items)}</h3>
           <div className={classes.buttonWrapper}>
-            <Button>Proceed to Buy</Button>
+            <Button handleClick={handleClick}>Proceed to Buy</Button>
           </div>
         </Fragment>
       ) : (
