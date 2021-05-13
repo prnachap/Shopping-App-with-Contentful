@@ -41,11 +41,11 @@ const FacebookAuth = () => {
     }
   };
 
-  const handleSignIn = () => {
-    window.FB.login();
-    window.FB.getLoginStatus(function (response) {
-      statusChangeCallback(response);
-    });
+  const handleSignIn = async () => {
+    const { status } = await new Promise(window.FB.login);
+    if (status === "connected") {
+      dispatch(signIn("facebook"));
+    }
   };
 
   return (

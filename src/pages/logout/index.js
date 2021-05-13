@@ -9,7 +9,7 @@ const Logout = () => {
   const dispatch = useDispatch();
   const { type } = useSelector((state) => state.auth);
 
-  const handleSignOut = () => {
+  const handleSignOut = async () => {
     if (type === "facebook") {
       window.FB.logout();
       dispatch(signOut("facebook"));
